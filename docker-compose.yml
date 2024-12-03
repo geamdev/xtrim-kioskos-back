@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  xtrim-kioscos-back:
+    build: ./
+    ports:
+      - ${PORT}:${PORT}
+    volumes:
+      - ./src:/usr/src/app/src
+    command: pnpm run start:dev
+    environment:
+      - PORT=${PORT}
